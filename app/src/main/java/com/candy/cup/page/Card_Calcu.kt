@@ -50,7 +50,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 
 	Column(
 		horizontalAlignment = Alignment.CenterHorizontally,
-		verticalArrangement = Arrangement.Center,
+		verticalArrangement = Arrangement.SpaceEvenly,
 
 		modifier = Modifier.padding(innerpadding)
 			.fillMaxSize()
@@ -67,7 +67,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 		)
 		{
 			Column(
-				modifier = Modifier.padding(16.dp)
+				modifier = Modifier.padding(8.dp)
 			)
 			{
 				Row(
@@ -75,7 +75,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "请直立，放松后用软尺贴合乳房下缘，水平绕身体一圈:",
+						text = "请自然站立，放松后用软尺贴合乳房下缘，水平绕身体一圈:",
 						modifier = Modifier.padding(16.dp)
 							.fillMaxWidth(0.7f)
 					)
@@ -91,32 +91,6 @@ fun Card_Calcu(innerpadding: PaddingValues)
 								newText->
 							text[0] = newText
 							Data.value.under = newText.toFloatOrNull() ?: 0f
-						},
-						maxLines = 1,
-						modifier = Modifier.padding(horizontal = 16.dp)
-					)
-				}
-				Row(
-
-				)
-				{
-					Text(
-						text = "请呼气，用软尺贴合乳房下缘，水平绕身体一圈:",
-						modifier = Modifier.padding(16.dp)
-							.fillMaxWidth(0.7f)
-					)
-					OutlinedTextField(
-						value =  text[1],
-						label = {
-							Text(
-								"cm"
-							)
-						},
-						keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-						onValueChange = {
-								newText->
-							text[1] = newText
-							Data.value.under_air = newText.toFloatOrNull() ?: 0f
 						},
 						maxLines = 1,
 						modifier = Modifier.padding(horizontal = 16.dp)
@@ -174,32 +148,6 @@ fun Card_Calcu(innerpadding: PaddingValues)
 						modifier = Modifier.padding(horizontal = 16.dp)
 					)
 				}
-				Row(
-
-				)
-				{
-					Text(
-						text = "请俯身90°，放松后用软尺轻轻经过乳头，水平绕身体一圈:",
-						modifier = Modifier.padding(16.dp)
-							.fillMaxWidth(0.7f)
-					)
-					OutlinedTextField(
-						value =  text[4],
-						label = {
-							Text(
-								"cm"
-							)
-						},
-						keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-						onValueChange = {
-								newText->
-							text[4] = newText
-							Data.value.bust_90 = newText.toFloatOrNull() ?: 0f
-						},
-						maxLines = 1,
-						modifier = Modifier.padding(horizontal = 16.dp)
-					)
-				}
 			}
 			Column(
 				horizontalAlignment = Alignment.CenterHorizontally,
@@ -215,7 +163,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "输入完毕 开始计算喵!"
+						text = "输入完毕 点我开始计算喵!"
 					)
 				}
 				Text(
@@ -225,6 +173,29 @@ fun Card_Calcu(innerpadding: PaddingValues)
 					fontWeight = FontWeight.Bold,
 
 					modifier = Modifier.padding(16.dp)
+				)
+			}
+		}
+
+		Card(
+
+		)
+		{
+			Column(
+				modifier = Modifier.padding(16.dp)
+			)
+			{
+				Text(
+					text = "- 放松均为正常呼气后的测量值",
+					fontSize = 12.sp
+				)
+				Text(
+					text = "- 请不要把尺子勒太紧，让尺子刚刚好贴合皮肤即可",
+					fontSize = 12.sp
+				)
+				Text(
+					text = "- 不要把乳头压入乳房内，也不要压迫乳房",
+					fontSize = 12.sp
 				)
 			}
 		}
