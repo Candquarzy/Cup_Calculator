@@ -12,8 +12,8 @@ android {
 		applicationId = "com.candy.cup"
 		minSdk = 24
 		targetSdk = 36
-		versionCode = 20251005
-		versionName = "0.1.1"
+		versionCode = 20251006
+		versionName = "0.1.2"
 
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 	}

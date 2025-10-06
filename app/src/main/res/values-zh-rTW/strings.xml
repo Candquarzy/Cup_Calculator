@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">罩杯測算工具</string>
+    <string name="under_tips">請自然站立，在放鬆的情況下用皮尺貼合胸部下方，水平圍繞身體一圈:</string>
+    <string name="bust_tips">請自然站立，在放鬆的情況下用皮尺輕輕的經過乳頭，水平圍繞身體一圈:</string>
+    <string name="bust_45_tips">請俯身45°，放鬆后用皮尺輕輕的經過乳頭，水平圍繞身體一圈:</string>
+    <string name="calcu">輸入完畢 點擊開始測算!</string>
+    <string name="tips1">- 放鬆指正常呼氣后測量得到的結果</string>
+    <string name="tips2">- 請不要讓尺子勒太緊，讓尺子剛好貼合皮膚就可以了</string>
+    <string name="tips3">- 不要把乳頭壓入胸部内，也不要壓迫胸部</string>
+</resources>

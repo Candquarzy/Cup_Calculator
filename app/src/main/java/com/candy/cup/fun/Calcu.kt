@@ -16,8 +16,6 @@ fun Calcu(Data: Data): String
 	}
 	val results: Float = ((Data.bust + Data.bust_45) / 2.0f) - Data.under
 
-	Log.d("FUCK", "count is now: $results")
-
 	return count.toString() + " " + when(results){
 		in 27.5..29.99 -> "H"
 		in 25.0..27.49 -> "G"

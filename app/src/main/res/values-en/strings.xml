@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cup Size Calculator</string>
+    <string name="under_tips">Please stand upright, relax, and gently wrap the measuring tape horizontally around your body along the bottom edge of your breasts:</string>
+    <string name="bust_tips">Please stand upright, relax, and gently wrap the measuring tape horizontally around your body across the nipples:</string>
+    <string name="bust_45_tips">Please lean forward 45°, relax, and gently wrap the measuring tape horizontally around your body across the nipples:</string>
+    <string name="calcu">After entering all values, click me to start calculating</string>
+    <string name="tips1">- All measurements should be taken after a normal exhalation in a relaxed state.</string>
+    <string name="tips2">- Do not pull the tape too tight — it should just lightly touch the skin.</string>
+    <string name="tips3">- Do not press the nipples into the breasts, and avoid compressing the breasts.</string>
+</resources>

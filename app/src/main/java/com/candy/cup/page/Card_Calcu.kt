@@ -36,15 +36,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import com.candy.cup.ui.theme.Cup_CalculatorTheme
 import com.candy.cup.data.Data
+import com.candy.cup.R
 
 @Composable
 fun Card_Calcu(innerpadding: PaddingValues)
 {
 	val text = remember { mutableStateListOf("", "", "", "", "") }
 	val Data = remember { mutableStateOf(Data()) }
-	var res_str by remember { mutableStateOf("请先点击上面的计算哦!") }
+	var res_str by remember { mutableStateOf("?") }
 	var font_size by remember { mutableStateOf(16.sp) }
 	var font_color by remember { mutableStateOf(Color.Unspecified) }
 
@@ -57,7 +59,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 	)
 	{
 		Text(
-			text = "罩杯计算器",
+			text = stringResource(R.string.app_name),
 			fontSize = 64.sp,
 			fontWeight = FontWeight.Bold,
 		)
@@ -75,7 +77,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "请自然站立，放松后用软尺贴合乳房下缘，水平绕身体一圈:",
+						text = stringResource(R.string.under_tips),
 						modifier = Modifier.padding(16.dp)
 							.fillMaxWidth(0.7f)
 					)
@@ -101,7 +103,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "请直立，放松后用软尺轻轻经过乳头，水平绕身体一圈:",
+						text = stringResource(R.string.bust_tips),
 						modifier = Modifier.padding(16.dp)
 							.fillMaxWidth(0.7f)
 					)
@@ -127,7 +129,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "请俯身45°，放松后用软尺轻轻经过乳头，水平绕身体一圈:",
+						text = stringResource(R.string.bust_45_tips),
 						modifier = Modifier.padding(16.dp)
 							.fillMaxWidth(0.7f)
 					)
@@ -163,7 +165,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "输入完毕 点我开始计算喵!"
+						text = stringResource(R.string.calcu)
 					)
 				}
 				Text(
@@ -186,15 +188,15 @@ fun Card_Calcu(innerpadding: PaddingValues)
 			)
 			{
 				Text(
-					text = "- 放松均为正常呼气后的测量值",
+					text = stringResource(R.string.tips1),
 					fontSize = 12.sp
 				)
 				Text(
-					text = "- 请不要把尺子勒太紧，让尺子刚刚好贴合皮肤即可",
+					text = stringResource(R.string.tips2),
 					fontSize = 12.sp
 				)
 				Text(
-					text = "- 不要把乳头压入乳房内，也不要压迫乳房",
+					text = stringResource(R.string.tips3),
 					fontSize = 12.sp
 				)
 			}
