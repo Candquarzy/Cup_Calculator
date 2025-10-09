@@ -39,7 +39,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 {
 	val text = remember { mutableStateListOf("", "", "") }
 	val data = remember { mutableStateOf(Data()) }
-	var res_str by remember { mutableStateOf("?") }
+	var res_str by remember { mutableStateOf("") }
 	var font_size by remember { mutableStateOf(16.sp) }
 	var font_color by remember { mutableStateOf(Color.Unspecified) }
 
@@ -165,20 +165,25 @@ fun Card_Calcu(innerpadding: PaddingValues)
 						text = stringResource(R.string.calcu)
 					)
 				}
-				Text(
-					text = res_str,
-					fontSize = font_size,
-					color = font_color,
-					fontWeight = FontWeight.Bold,
-
-					modifier = Modifier.padding(16.dp)
-				)
 				Row(
-
+					modifier = Modifier.padding(8.dp)
 				)
 				{
 					Text(
-						text = "胸围差: " + data.value.sum,
+						text = stringResource(R.string.bust_differ) + " " + data.value.sum,
+						color = Color(0xFFFD81AC),
+						fontWeight = FontWeight.SemiBold,
+					)
+				}
+				Row(
+					modifier = Modifier.padding(vertical = 16.dp)
+				)
+				{
+					Text(
+						text = res_str,
+						fontSize = font_size,
+						color = font_color,
+						fontWeight = FontWeight.Bold,
 					)
 				}
 			}

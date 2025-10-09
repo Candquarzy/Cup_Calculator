@@ -8,4 +8,5 @@
     <string name="tips1">- 放鬆指正常呼氣后測量得到的結果</string>
     <string name="tips2">- 請不要讓尺子勒太緊，讓尺子剛好貼合皮膚就可以了</string>
     <string name="tips3">- 不要把乳頭壓入胸部内，也不要壓迫胸部</string>
+    <string name="bust_differ">"胸圍差:  "</string>
 </resources>
