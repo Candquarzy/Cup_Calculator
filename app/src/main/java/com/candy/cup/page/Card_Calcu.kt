@@ -37,7 +37,7 @@ import com.candy.cup.R
 @Composable
 fun Card_Calcu(innerpadding: PaddingValues)
 {
-	val text = remember { mutableStateListOf("", "", "", "", "") }
+	val text = remember { mutableStateListOf("", "", "") }
 	val data = remember { mutableStateOf(Data()) }
 	var res_str by remember { mutableStateOf("?") }
 	var font_size by remember { mutableStateOf(16.sp) }
@@ -101,7 +101,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 							.fillMaxWidth(0.7f)
 					)
 					OutlinedTextField(
-						value =  text[2],
+						value =  text[1],
 						label = {
 							Text(
 								"cm"
@@ -110,7 +110,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 						keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
 						onValueChange = {
 								newText->
-							text[2] = newText
+							text[1] = newText
 							data.value.bust = newText.toFloatOrNull() ?: 0f
 						},
 						maxLines = 1,
@@ -127,7 +127,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 							.fillMaxWidth(0.7f)
 					)
 					OutlinedTextField(
-						value =  text[3],
+						value =  text[2],
 						label = {
 							Text(
 								"cm"
@@ -136,7 +136,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 						keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
 						onValueChange = {
 								newText->
-							text[3] = newText
+							text[2] = newText
 							data.value.bust_45 = newText.toFloatOrNull() ?: 0f
 						},
 						maxLines = 1,
