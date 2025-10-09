@@ -1,9 +1,10 @@
-import android.util.Log
+import androidx.compose.runtime.MutableState
 import com.candy.cup.data.Data
+import java.nio.file.Files.size
 
-fun Calcu(Data: Data): String
+fun Calcu(data: Data): Data
 {
-	val count: Int = when(Data.under){
+	val count: Int = when(data.under){
 		in 58.0..62.99 -> 60
 		in 63.0..67.99 -> 65
 		in 68.0..72.99 -> 70
@@ -14,9 +15,9 @@ fun Calcu(Data: Data): String
 		in 93.0..97.99 -> 95
 		else -> -1
 	}
-	val results: Float = ((Data.bust + Data.bust_45) / 2.0f) - Data.under
+	val sum = ((data.bust + data.bust_45) / 2.0f) - data.under
 
-	return count.toString() + " " + when(results){
+	val size = when(sum){
 		in 27.5..29.99 -> "H"
 		in 25.0..27.49 -> "G"
 		in 22.5..24.99 -> "F"
@@ -28,4 +29,6 @@ fun Calcu(Data: Data): String
 		in 7.5..9.9 -> "AA"
 		else -> "?"
 	}
+
+	return data.copy(sum = sum, size = count.toString() + size)
 }

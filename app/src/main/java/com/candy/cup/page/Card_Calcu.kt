@@ -1,7 +1,6 @@
 package com.candy.cup.page
 
 import Calcu
-import android.R.attr.label
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,26 +9,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.foundation.text.input.TextFieldLineLimits
 import androidx.compose.material3.Card
-import androidx.compose.material3.TextField
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.key.Key.Companion.D
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,7 +38,7 @@ import com.candy.cup.R
 fun Card_Calcu(innerpadding: PaddingValues)
 {
 	val text = remember { mutableStateListOf("", "", "", "", "") }
-	val Data = remember { mutableStateOf(Data()) }
+	val data = remember { mutableStateOf(Data()) }
 	var res_str by remember { mutableStateOf("?") }
 	var font_size by remember { mutableStateOf(16.sp) }
 	var font_color by remember { mutableStateOf(Color.Unspecified) }
@@ -92,7 +85,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 						onValueChange = {
 								newText->
 							text[0] = newText
-							Data.value.under = newText.toFloatOrNull() ?: 0f
+							data.value.under = newText.toFloatOrNull() ?: 0f
 						},
 						maxLines = 1,
 						modifier = Modifier.padding(horizontal = 16.dp)
@@ -118,7 +111,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 						onValueChange = {
 								newText->
 							text[2] = newText
-							Data.value.bust = newText.toFloatOrNull() ?: 0f
+							data.value.bust = newText.toFloatOrNull() ?: 0f
 						},
 						maxLines = 1,
 						modifier = Modifier.padding(horizontal = 16.dp)
@@ -144,13 +137,14 @@ fun Card_Calcu(innerpadding: PaddingValues)
 						onValueChange = {
 								newText->
 							text[3] = newText
-							Data.value.bust_45 = newText.toFloatOrNull() ?: 0f
+							data.value.bust_45 = newText.toFloatOrNull() ?: 0f
 						},
 						maxLines = 1,
 						modifier = Modifier.padding(horizontal = 16.dp)
 					)
 				}
 			}
+
 			Column(
 				horizontalAlignment = Alignment.CenterHorizontally,
 				modifier = Modifier.fillMaxWidth()
@@ -158,7 +152,10 @@ fun Card_Calcu(innerpadding: PaddingValues)
 			{
 				ElevatedButton(
 					onClick = {
-						res_str = Calcu(Data.value)
+						val newData = Calcu(data.value)
+						data.value = newData
+						res_str = newData.size
+
 						font_size = 36.sp
 						font_color = Color(0xFFFD81AC)
 					}
@@ -176,6 +173,14 @@ fun Card_Calcu(innerpadding: PaddingValues)
 
 					modifier = Modifier.padding(16.dp)
 				)
+				Row(
+
+				)
+				{
+					Text(
+						text = "胸围差: " + data.value.sum,
+					)
+				}
 			}
 		}
 
