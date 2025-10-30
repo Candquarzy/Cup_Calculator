@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">罩杯计算器</string>
     <string name="under_tips">请自然站立，放松后用软尺贴合乳房下缘，水平绕身体一圈:</string>
-    <string name="bust_tips">请自然站立，放松后用软尺贴合乳房下缘，水平绕身体一圈:</string>
+    <string name="bust_tips">请自然站立，放松后用软尺轻轻经过乳头，水平绕身体一圈:</string>
     <string name="bust_45_tips">请俯身45°，放松后用软尺轻轻经过乳头，水平绕身体一圈:</string>
     <string name="calcu">输入完毕 点我开始计算喵!</string>
     <string name="tips1">- 放松均为正常呼气后的测量值</string>

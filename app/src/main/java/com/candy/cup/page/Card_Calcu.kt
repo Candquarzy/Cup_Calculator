@@ -7,12 +7,16 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,9 +33,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.candy.cup.ui.theme.Cup_CalculatorTheme
 import com.candy.cup.data.Data
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Info
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.TextButton
+import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.window.Dialog
 import com.candy.cup.R
 
 @Composable
@@ -42,6 +53,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 	var res_str by remember { mutableStateOf("") }
 	var font_size by remember { mutableStateOf(16.sp) }
 	var font_color by remember { mutableStateOf(Color.Unspecified) }
+	var dialog_show by remember { mutableStateOf(false) }
 
 	Column(
 		horizontalAlignment = Alignment.CenterHorizontally,
@@ -66,14 +78,46 @@ fun Card_Calcu(innerpadding: PaddingValues)
 			)
 			{
 				Row(
-
+					verticalAlignment = Alignment.CenterVertically,
+					modifier = Modifier.fillMaxWidth()
 				)
 				{
 					Text(
-						text = stringResource(R.string.under_tips),
+//						text = stringResource(R.string.under_tips),
+						text = "下胸围: ",
 						modifier = Modifier.padding(16.dp)
-							.fillMaxWidth(0.7f)
+							.fillMaxWidth(0.3f)
 					)
+					IconButton(
+						onClick = {
+							dialog_show = true
+						}
+					)
+					{
+						Icon(
+							imageVector = Icons.Rounded.Info,
+							contentDescription = "more"
+						)
+						if(dialog_show)
+						{
+							Dialog(
+								onDismissRequest = {
+									dialog_show = false
+								}
+							)
+							{
+								Card(
+									modifier = Modifier.height(300.dp)
+										.width(450.dp)
+								)
+								{
+									Text(
+										text = stringResource(R.string.under_tips)
+									)
+								}
+							}
+						}
+					}
 					OutlinedTextField(
 						value =  text[0],
 						label = {
@@ -92,14 +136,46 @@ fun Card_Calcu(innerpadding: PaddingValues)
 					)
 				}
 				Row(
-
+					verticalAlignment = Alignment.CenterVertically,
+					modifier = Modifier.fillMaxWidth()
 				)
 				{
 					Text(
-						text = stringResource(R.string.bust_tips),
+						text = "上胸围: ",
+//						text = stringResource(R.string.bust_tips),
 						modifier = Modifier.padding(16.dp)
-							.fillMaxWidth(0.7f)
+							.fillMaxWidth(0.3f)
 					)
+					IconButton(
+						onClick = {
+							dialog_show = true
+						}
+					)
+					{
+						Icon(
+							imageVector = Icons.Rounded.Info,
+							contentDescription = "more"
+						)
+						if(dialog_show)
+						{
+							Dialog(
+								onDismissRequest = {
+									dialog_show = false
+								}
+							)
+							{
+								Card(
+									modifier = Modifier.height(300.dp)
+										.width(450.dp)
+								)
+								{
+									Text(
+										text = stringResource(R.string.under_tips)
+									)
+								}
+							}
+						}
+					}
 					OutlinedTextField(
 						value =  text[1],
 						label = {
@@ -118,14 +194,46 @@ fun Card_Calcu(innerpadding: PaddingValues)
 					)
 				}
 				Row(
-
+					verticalAlignment = Alignment.CenterVertically,
+					modifier = Modifier.fillMaxWidth()
 				)
 				{
 					Text(
-						text = stringResource(R.string.bust_45_tips),
+						text = "俯身45°上胸围: ",
+						// text = stringResource(R.string.bust_45_tips),
 						modifier = Modifier.padding(16.dp)
-							.fillMaxWidth(0.7f)
+							.fillMaxWidth(0.3f)
 					)
+					IconButton(
+						onClick = {
+							dialog_show = true
+						}
+					)
+					{
+						Icon(
+							imageVector = Icons.Rounded.Info,
+							contentDescription = "more"
+						)
+						if(dialog_show)
+						{
+							Dialog(
+								onDismissRequest = {
+									dialog_show = false
+								}
+							)
+							{
+								Card(
+									modifier = Modifier.height(300.dp)
+										.width(450.dp)
+								)
+								{
+									Text(
+										text = stringResource(R.string.under_tips)
+									)
+								}
+							}
+						}
+					}
 					OutlinedTextField(
 						value =  text[2],
 						label = {
