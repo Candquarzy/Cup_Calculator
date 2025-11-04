@@ -10,7 +10,6 @@ fun Calcu(data: Data): Data
 	for(i in 0..((data.under - 43).toInt()) step 5)
 	{
 		count += 5
-//		Log.i("FUCK",count.toString())
 	}
 
 	val sum = ((data.bust + data.bust_45) / 2.0f) - data.under

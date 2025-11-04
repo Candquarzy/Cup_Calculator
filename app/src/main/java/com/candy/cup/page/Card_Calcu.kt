@@ -7,9 +7,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -33,15 +31,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import com.candy.cup.ui.theme.Cup_CalculatorTheme
 import com.candy.cup.data.Data
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Info
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.TextButton
-import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.window.Dialog
 import com.candy.cup.R
 
@@ -53,7 +48,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 	var res_str by remember { mutableStateOf("") }
 	var font_size by remember { mutableStateOf(16.sp) }
 	var font_color by remember { mutableStateOf(Color.Unspecified) }
-	var dialog_show by remember { mutableStateOf(false) }
+	var dialog_show = remember { mutableStateListOf(false, false, false) }
 
 	Column(
 		horizontalAlignment = Alignment.CenterHorizontally,
@@ -65,7 +60,7 @@ fun Card_Calcu(innerpadding: PaddingValues)
 	{
 		Text(
 			text = stringResource(R.string.app_name),
-			fontSize = 64.sp,
+			fontSize = 36.sp,
 			fontWeight = FontWeight.Bold,
 		)
 		ElevatedCard(
@@ -83,14 +78,13 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-//						text = stringResource(R.string.under_tips),
-						text = "下胸围: ",
+						text = stringResource(R.string.under_title),
 						modifier = Modifier.padding(16.dp)
 							.fillMaxWidth(0.3f)
 					)
 					IconButton(
 						onClick = {
-							dialog_show = true
+							dialog_show[0] = true
 						}
 					)
 					{
@@ -98,22 +92,28 @@ fun Card_Calcu(innerpadding: PaddingValues)
 							imageVector = Icons.Rounded.Info,
 							contentDescription = "more"
 						)
-						if(dialog_show)
+						if(dialog_show[0])
 						{
 							Dialog(
 								onDismissRequest = {
-									dialog_show = false
+									dialog_show[0] = false
 								}
 							)
 							{
 								Card(
-									modifier = Modifier.height(300.dp)
-										.width(450.dp)
+									modifier = Modifier.padding(16.dp)
 								)
 								{
-									Text(
-										text = stringResource(R.string.under_tips)
+									Row(
+										modifier = Modifier.padding(16.dp)
 									)
+									{
+										Text(
+											text = stringResource(R.string.under_tips),
+											textAlign = TextAlign.Center
+										)
+									}
+
 								}
 							}
 						}
@@ -141,14 +141,13 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "上胸围: ",
-//						text = stringResource(R.string.bust_tips),
+						text = stringResource(R.string.bust_title),
 						modifier = Modifier.padding(16.dp)
 							.fillMaxWidth(0.3f)
 					)
 					IconButton(
 						onClick = {
-							dialog_show = true
+							dialog_show[1] = true
 						}
 					)
 					{
@@ -156,22 +155,27 @@ fun Card_Calcu(innerpadding: PaddingValues)
 							imageVector = Icons.Rounded.Info,
 							contentDescription = "more"
 						)
-						if(dialog_show)
+						if(dialog_show[1])
 						{
 							Dialog(
 								onDismissRequest = {
-									dialog_show = false
+									dialog_show[1] = false
 								}
 							)
 							{
 								Card(
-									modifier = Modifier.height(300.dp)
-										.width(450.dp)
+									modifier = Modifier.padding(16.dp)
 								)
 								{
-									Text(
-										text = stringResource(R.string.under_tips)
+									Row(
+										modifier = Modifier.padding(16.dp)
 									)
+									{
+										Text(
+											text = stringResource(R.string.bust_tips),
+											textAlign = TextAlign.Center
+										)
+									}
 								}
 							}
 						}
@@ -199,14 +203,13 @@ fun Card_Calcu(innerpadding: PaddingValues)
 				)
 				{
 					Text(
-						text = "俯身45°上胸围: ",
-						// text = stringResource(R.string.bust_45_tips),
+						text = stringResource(R.string.bust_45_title),
 						modifier = Modifier.padding(16.dp)
 							.fillMaxWidth(0.3f)
 					)
 					IconButton(
 						onClick = {
-							dialog_show = true
+							dialog_show[2] = true
 						}
 					)
 					{
@@ -214,22 +217,27 @@ fun Card_Calcu(innerpadding: PaddingValues)
 							imageVector = Icons.Rounded.Info,
 							contentDescription = "more"
 						)
-						if(dialog_show)
+						if(dialog_show[2])
 						{
 							Dialog(
 								onDismissRequest = {
-									dialog_show = false
+									dialog_show[2] = false
 								}
 							)
 							{
 								Card(
-									modifier = Modifier.height(300.dp)
-										.width(450.dp)
+									modifier = Modifier.padding(16.dp)
 								)
 								{
-									Text(
-										text = stringResource(R.string.under_tips)
+									Row(
+										modifier = Modifier.padding(16.dp)
 									)
+									{
+										Text(
+											text = stringResource(R.string.bust_45_tips),
+											textAlign = TextAlign.Center
+										)
+									}
 								}
 							}
 						}
