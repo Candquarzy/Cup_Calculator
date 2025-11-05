@@ -31,14 +31,14 @@ fun Calcu(data: Data): Data
 		while(count > 7.5)
 		{
 			s++
-			count -= 2.5f
+			count -= 2.49f
 		}
 
 		size = if(s > 'Z')
 		{
 			"Z"
 		}
-		else if(s == '@') //TODO BUG
+		else if(s == '@')
 		{
 			"A"
 		}

@@ -9,6 +9,6 @@
     <string name="tips3">- 不要把乳头压入乳房内，也不要压迫乳房</string>
     <string name="bust_differ">胸围差:</string>
     <string name="under_title">"下胸围: "</string>
-    <string name="bust_title">上胸围:</string>
-    <string name="bust_45_title">上胸围:</string>
+    <string name="bust_title">"上胸围(直立): "</string>
+    <string name="bust_45_title">"上胸围(倾斜45°): "</string>
 </resources>
