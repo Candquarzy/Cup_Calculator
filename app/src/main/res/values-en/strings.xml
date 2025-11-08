@@ -12,4 +12,5 @@
     <string name="under_title">"Underbust: "</string>
     <string name="bust_title">"Bust (standing): "</string>
     <string name="bust_45_title">Bust (45° forward lean) :</string>
+    <string name="repository">Repository</string>
 </resources>

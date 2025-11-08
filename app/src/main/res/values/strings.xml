@@ -11,4 +11,5 @@
     <string name="under_title">"下胸围: "</string>
     <string name="bust_title">"上胸围(直立): "</string>
     <string name="bust_45_title">"上胸围(倾斜45°): "</string>
+    <string name="repository">仓库地址</string>
 </resources>
